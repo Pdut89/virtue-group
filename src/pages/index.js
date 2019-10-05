@@ -3,12 +3,12 @@ import React from 'react'
 import homeStyles from './styles'
 import { withStyles } from '@material-ui/core/styles'
 
-import homeImageHq from '../images/home-image-hq.png'
-import homeImageLq from '../images/home-image-lq.png'
+import homeImageHq from '@images/home-image-hq.png'
+import homeImageLq from '@images/home-image-lq.png'
 
 import { Typography } from '@material-ui/core'
-import ServiceCards from '../components/cards/service-cards'
-import ImageLoader from '../components/image-loader'
+import ServiceCards from '@components/cards/service-cards'
+import ImageLoader from '@components/image-loader'
 
 const Home = ({ classes }) => (
   <>

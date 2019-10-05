@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom'
 import ImageLoader from '../image-loader'
 import Carousel from '../carousel'
 
-import electrical from '../../images/icons/services/electrical-dark.svg'
-import maintenance from '../../images/icons/services/maintenance-dark.svg'
-import plumbing from '../../images/icons/services/plumbing-dark.svg'
-import construction from '../../images/icons/services/construction-dark.svg'
+import electrical from '@images/icons/services/electrical-dark.svg'
+import maintenance from '@images/icons/services/maintenance-dark.svg'
+import plumbing from '@images/icons/services/plumbing-dark.svg'
+import construction from '@images/icons/services/construction-dark.svg'
 
 import { withStyles } from '@material-ui/core/styles'
 import { serviceCardStyles } from './styles'
 
-import { servicesData } from '../../utils/data'
+import { servicesData } from '@utils/data'
 
 import {
   Typography,

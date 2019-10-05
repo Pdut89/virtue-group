@@ -5,10 +5,10 @@ import contactStyles from './styles'
 import { withStyles } from '@material-ui/core/styles'
 
 import { Grid } from '@material-ui/core'
-import ContactForm from '../../components/forms/contact-form'
-import AddressCard from '../../components/address-card'
-import Card from '../../components/cards'
-import ContactLink from '../../components/links/contact-link'
+import ContactForm from '@components/forms/contact-form'
+import AddressCard from '@components/address-card'
+import Card from '@components/cards'
+import ContactLink from '@components/links/contact-link'
 
 class Contact extends PureComponent {
 

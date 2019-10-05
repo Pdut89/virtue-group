@@ -4,15 +4,15 @@ import { Switch, Redirect, Route, withRouter } from "react-router-dom"
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import theme from './theme/mui-theme'
 
-import { navData } from './utils/nav-data'
+import { navData } from '@utils/nav-data'
 
 import Home from './pages/'
 import About from './pages/about'
 import Services from './pages/services'
 import Contact from './pages/contact'
 
-import Navbar from './components/navbars'
-import Background from './components/background'
+import Navbar from '@components/navbars'
+import Background from '@components/background'
 
 function getPageIndex(pathname) {
   const urlPage = pathname.split("/")[1]

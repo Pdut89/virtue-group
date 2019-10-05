@@ -3,8 +3,8 @@ import React from 'react'
 import Footer from '../footer'
 import ImageLoader from '../image-loader'
 
-import background from '../../images/background.svg'
-import bottomImage from '../../images/page-bottom.svg'
+import background from '@images/background.svg'
+import bottomImage from '@images/page-bottom.svg'
 
 import backgroundStyles from './styles'
 

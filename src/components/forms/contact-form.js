@@ -6,14 +6,14 @@ import formStyles from './styles'
 import {
   validateField,
   validateForm
-} from '../../utils/validation'
+} from '@utils/validation'
 
 import {
   Button,
   CircularProgress
 } from '@material-ui/core'
 
-import Input from '../../components/inputs'
+import Input from '@components/inputs'
 import ExpandingCard from '../cards/expanding-card'
 
 class ContactForm extends PureComponent {
