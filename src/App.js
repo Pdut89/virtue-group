@@ -69,6 +69,7 @@ class App extends PureComponent {
             padding: 0;
             text-decoration: none;
             list-style: none;
+            color: inherit;
           }
           #root {
             font-family: ${theme.typography.fontFamily};

@@ -15,10 +15,10 @@ const carouselStyles = theme => ({
     right: 16
   },
   item: {
-    padding: 0
+    padding: 16,
   },
   container: {
-    padding: 0
+    padding: '16px 0'
   }
 })
 

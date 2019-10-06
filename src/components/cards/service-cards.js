@@ -14,10 +14,7 @@ import { serviceCardStyles } from './styles'
 
 import { servicesData } from '@utils/data'
 
-import {
-  Typography,
-  Button
-} from '@material-ui/core'
+import { Typography, Card } from '@material-ui/core'
 
 const serviceIcons = {
   electrical,
@@ -28,39 +25,34 @@ const serviceIcons = {
 
 class ServiceCards extends PureComponent {
 
-
-  renderCard = service => {
+  renderCard = ({ name, description, route }) => {
     const { classes } = this.props
-    const { name, description, route } = service
 
     return (
-        <div
-          key={name}
-          className={classes.cardContainer}
+      <Link
+        key={name}
+        to={route}
+        className={classes.cardContainer}
+      >
+        <Card
+          className={classes.card}
         >
           <ImageLoader
             style={{height: 100, width: 100}}
             hdImage={serviceIcons[name]}
             alt={`${name}-icon`}
           />
-
           <Typography
             variant="subtitle1"
             classes={{subtitle1: classes.cardTitle}}>
             {name}
           </Typography>
-
           <Typography
             classes={{body1: classes.cardDescription}}>
             {description}
           </Typography>
-
-          <Button
-            classes={{root: classes.button}}
-          >
-            <Link to={route}>More Info</Link>
-          </Button>
-        </div>
+        </Card>
+      </Link>
     )
   }
 

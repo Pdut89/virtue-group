@@ -11,17 +11,17 @@ import { carouselStyles, dotStyles } from './styles'
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1360 },
+    breakpoint: { max: 10000, min: 900 },
     items: 4,
-    slidesToSlide: 4
+    slidesToSlide: 0
   },
   tablet: {
-    breakpoint: { max: 1360, min: 720 },
-    items: 2,
-    slidesToSlide: 2
+    breakpoint: { max: 900, min: 700 },
+    items: 3,
+    slidesToSlide: 1
   },
   mobile: {
-    breakpoint: { max: 720, min: 0 },
+    breakpoint: { max: 700, min: 0 },
     items: 1,
     slidesToSlide: 1
   }
@@ -66,7 +66,7 @@ class ImageCarousel extends Component {
     return (
       <Carousel
         swipeable={true}
-        draggable={false}
+        draggable={true}
         showDots={showDots}
         customDot={<Dot/>}
         responsive={responsive}
@@ -80,7 +80,7 @@ class ImageCarousel extends Component {
         removeArrowOnDeviceType={["mobile"]}
         autoPlay={isMobile}
         autoPlaySpeed={7000}
-        infinite={isMobile}
+        infinite={false}
       >
         {children}
       </Carousel>

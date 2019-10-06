@@ -26,14 +26,20 @@ const cardStyles = theme => ({
 const serviceCardStyles = theme => ({
   container: {
     ...theme.container,
-    height: '100%'
+    height: '100%',
+    margin: 0
   },
   cardContainer: {
+    margin: '0 auto',
+    display: 'flex',
+    maxWidth: 200,
+  },
+  card: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '100%',
-    padding: 30
+    overflow: 'hidden',
+    padding: 16
   },
   cardTitle: {
     fontSize: 16,
@@ -48,15 +54,6 @@ const serviceCardStyles = theme => ({
     fontSize: 16,
     opacity: .6,
     textAlign: 'center'
-  },
-  button: {
-    marginTop: 16,
-    backgroundColor: '#009688',
-    '& a': {
-      textTransform: 'uppercase',
-      color: theme.colors.white,
-      fontSize: 14
-    }
   }
 })
 

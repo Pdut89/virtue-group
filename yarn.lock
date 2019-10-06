@@ -6134,6 +6134,11 @@ jsx-ast-utils@^2.0.1:
     array-includes "^3.0.3"
     object.assign "^4.1.0"
 
+just-toasty@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/just-toasty/-/just-toasty-1.4.0.tgz#f95e7ee1d8bc40d3a42aea370579c81c7ead8850"
+  integrity sha512-RxNy6SaldIURdqyTjAJyhbuap8aMyRAF4/uLF7FwjlBxqvDp0ryE0aLAyc4OSBJWvmReHJJIrTUAZ5HrnuI8Xw==
+
 keycode@^2.1.7:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"

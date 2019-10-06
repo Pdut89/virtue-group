@@ -1,7 +1,7 @@
 const homeStyles = theme => ({
   subtitle: {
     fontSize: 28,
-    marginTop: 30,
+    marginTop: 32,
     fontWeight: 500,
     textTransform: 'uppercase',
     letterSpacing: 3,

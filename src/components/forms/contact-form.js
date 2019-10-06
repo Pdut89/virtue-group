@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import toast from 'just-toasty'
 import axios from 'axios'
 
 import formStyles from './styles'
@@ -10,11 +11,11 @@ import {
 
 import {
   Button,
-  CircularProgress
+  CircularProgress,
 } from '@material-ui/core'
 
 import Input from '@components/inputs'
-import ExpandingCard from '../cards/expanding-card'
+import ExpandingCard from '@components/cards/expanding-card'
 
 class ContactForm extends PureComponent {
 
@@ -27,7 +28,7 @@ class ContactForm extends PureComponent {
     message: '',
     validationErrors: {},
     previousErrors: [],
-    isLoading: false
+    isLoading: false,
   }
 
   resetForm = () => {
@@ -41,6 +42,17 @@ class ContactForm extends PureComponent {
       validationErrors: {},
       previousErrors: []
     })
+  }
+
+  displayToast = (message, isError) => {
+    const config = {
+      styles: {
+        ...formStyles.snackbar,
+        backgroundColor: isError ? 'red' : '#fff'
+      },
+      duration: 6000
+    }
+    toast(message, config)
   }
 
   handleChange = event => {
@@ -76,12 +88,11 @@ class ContactForm extends PureComponent {
 
     if (errorsArr.length) {
       const previousErrors = errorsArr.map(([key]) => key)
+      this.displayToast('Oops! Please complete all required fields.')
       return this.setState({validationErrors, previousErrors})
-    }
-
-    setTimeout(() => {
+    } else {
       this.setState({isLoading: true, validationErrors: {}})
-    }, 200)
+    }
 
     const {
       name,
@@ -105,11 +116,12 @@ class ContactForm extends PureComponent {
       if (res.statusText.toLowerCase() !== 'ok') {
         throw new Error(`Invalid response code ${res.status}`)
       }
-      console.log({res})
-      this.resetForm()
 
+      this.resetForm()
+      this.displayToast('Message sent successfully.')
     } catch (err) {
       console.error(err)
+      this.displayToast('Oops! Sending failed. Please try again or email us directly.', true)
     } finally {
       this.setState({isLoading: false})
     }
