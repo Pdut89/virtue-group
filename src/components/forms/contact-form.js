@@ -44,12 +44,9 @@ class ContactForm extends PureComponent {
     })
   }
 
-  displayToast = (message, isError) => {
+  displayToast = (message, type) => {
     const config = {
-      styles: {
-        ...formStyles.snackbar,
-        backgroundColor: isError ? 'red' : '#fff'
-      },
+      styles: {...formStyles.snackbar(type)},
       duration: 6000
     }
     toast(message, config)
@@ -118,10 +115,10 @@ class ContactForm extends PureComponent {
       }
 
       this.resetForm()
-      this.displayToast('Message sent successfully.')
+      this.displayToast('Message sent successfully.', 'success')
     } catch (err) {
       console.error(err)
-      this.displayToast('Oops! Sending failed. Please try again or email us directly.', true)
+      this.displayToast('Oops! Sending failed. Please try again or email us directly.', 'error')
     } finally {
       this.setState({isLoading: false})
     }
