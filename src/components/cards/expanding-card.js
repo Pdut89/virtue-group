@@ -4,24 +4,14 @@ import { expandingCardStyles } from './styles'
 import { withStyles } from '@material-ui/core/styles'
 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import SendIcon from '@material-ui/icons/Send'
-import HomeIcon  from '@material-ui/icons/Home'
-import MailOutlineIcon  from '@material-ui/icons/MailOutline'
 
 import {
   ExpansionPanel,
   ExpansionPanelSummary,
-  ExpansionPanelDetails,
-  Typography,
-  Avatar,
-  Toolbar
+  ExpansionPanelDetails
 } from '@material-ui/core'
 
-const iconVariants = {
-  send: <SendIcon/>,
-  home: <HomeIcon />,
-  mail: <MailOutlineIcon/>
-}
+import TitleBar from '@components/title-bar'
 
 const ExpandingCard = props => {
 
@@ -30,36 +20,23 @@ const ExpandingCard = props => {
     variant,
     title,
     children,
-    defaultExpanded
+    defaultExpanded,
+    ...otherProps
   } = props
-
-  const icon = variant ? iconVariants[variant] : null
 
   return (
     <ExpansionPanel
       classes={{root: classes.paper}}
       defaultExpanded={defaultExpanded}
+      {...otherProps}
     >
       <ExpansionPanelSummary
         expandIcon={<ExpandMoreIcon />}
       >
-
-        <Toolbar classes={{root: classes.toolbar}}>
-          {icon ? (
-            <Avatar>
-              {icon}
-            </Avatar>
-          ): null}
-
-          <Typography
-            classes={{h6: classes.title}}
-            variant="h6"
-            color="primary"
-          >
-            {title}
-          </Typography>
-        </Toolbar>
-
+        <TitleBar
+          title={title}
+          variant={variant}
+        />
       </ExpansionPanelSummary>
 
       <ExpansionPanelDetails>

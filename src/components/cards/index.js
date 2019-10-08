@@ -3,6 +3,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { cardStyles } from './styles'
 
+import TitleBar from '@components/title-bar'
 import { Grid, Card as MuiCard } from '@material-ui/core'
 
 const Card = props => {
@@ -11,6 +12,10 @@ const Card = props => {
     width,
     variant,
     children,
+    gridStyles,
+    cardStyles,
+    title,
+    icon,
     ...otherProps
   } = props
 
@@ -19,13 +24,23 @@ const Card = props => {
       item
       xs={12}
       md={width}
+      style={gridStyles}
     >
       <MuiCard
         classes={{root: classes.card}}
         className={classes[`${variant}Card`]}
+        style={cardStyles}
         {...otherProps}
       >
-        {children}
+        <>
+          {title || icon && (
+            <TitleBar
+              title={title}
+              variant={icon}
+            />
+          )}
+          {children}
+        </>
       </MuiCard>
     </Grid>
   )
@@ -35,7 +50,9 @@ const Card = props => {
 
 Card.defaultProps = {
   variant: 'defualt',
-  width: 12
+  width: 12,
+  gridStyles: {},
+  cardStyles: {}
 }
 
 export default withStyles(cardStyles)(Card)

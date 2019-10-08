@@ -6,19 +6,19 @@ import {
   ListItemText
 } from '@material-ui/core'
 
-import ExpandingCard from '../cards/expanding-card'
+import ExpandingCard from '@components/cards/expanding-card'
 
 import addressData from './data'
 
 const AddressCard = () => (
-  addressData.map(address => (
+  addressData.map(({title, variant, data}, index) => (
     <ExpandingCard
-      key={address.title}
-      variant={address.variant}
-      title={address.title}
+      key={title}
+      variant={variant}
+      title={title}
     >
       <List dense>
-        {address.data.map(line => (
+        {data.map(line => (
           <ListItem key={line}>
             <ListItemText>
               {line}

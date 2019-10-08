@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core'
 
 import Input from '@components/inputs'
-import ExpandingCard from '@components/cards/expanding-card'
+import Card from '@components/cards'
 
 class ContactForm extends PureComponent {
 
@@ -213,13 +213,12 @@ class ContactForm extends PureComponent {
     )
 
     return (
-      <ExpandingCard
+      <Card
         variant="send"
         title="Send us a message"
-        defaultExpanded
       >
         {form}
-      </ExpandingCard>
+      </Card>
     )
   }
 }

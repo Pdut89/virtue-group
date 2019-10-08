@@ -10,6 +10,11 @@ import AddressCard from '@components/address-card'
 import Card from '@components/cards'
 import ContactLink from '@components/links/contact-link'
 
+const imageCardProps = {
+  gridStyles: { height: '100%' },
+  cardStyles: { height: '100%' }
+}
+
 class Contact extends PureComponent {
 
   componentDidMount() {
@@ -34,17 +39,24 @@ class Contact extends PureComponent {
 
     return (
       <section className={classes.container}>
-        <Grid container spacing={2}>
-          <Card width={6} variant="dark">
+        <Grid
+          container
+          spacing={2}
+          classes={{root: classes.gridContainer}}
+        >
+
+          <Card variant="dark">
             <ContactLink variant="email" color="white"/>
           </Card>
 
-          <Card width={6} variant="dark">
-            <ContactLink variant="phone" color="white"/>
-          </Card>
-
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <ContactForm/>
+          </Grid>
+
+          <Grid item xs={6}>
+            <Card {...imageCardProps}>
+              Image here
+            </Card>
           </Grid>
 
           <Grid item xs={12}>

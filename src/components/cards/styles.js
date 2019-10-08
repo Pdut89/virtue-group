@@ -1,20 +1,13 @@
 const expandingCardStyles = theme => ({
   paper: {
     background: theme.palette.paper
-  },
-  toolbar: {
-    padding: 0,
-    minHeight: 'auto'
-  },
-  title: {
-    marginLeft: 20
   }
 })
 
 const cardStyles = theme => ({
   card: {
     display: 'flex',
-    alignItems: 'center',
+    flexDirection: 'column',
     backgroundColor: theme.palette.paper,
     padding: 24,
   },
